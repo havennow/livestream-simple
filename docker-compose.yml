@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  webserver:
+    build: .docker/nginx
+    working_dir: /application
+    volumes:
+      - ./src:/application
+    ports:
+      - '80:80'
+      - '8080:8080'
+      - '1935:1935'
